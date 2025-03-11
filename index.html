@@ -5,113 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nguyễn Ngọc Nhật - Backend Engineer</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Arial", sans-serif;
-      }
       body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
-        color: #333;
-        line-height: 1.6;
       }
       header {
         text-align: center;
-        margin-bottom: 20px;
       }
-      h1 {
-        font-size: 28px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 5px;
+      h1,
+      h2 {
+        margin: 0;
       }
       h2 {
-        font-size: 18px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
         color: #555;
-        margin-bottom: 15px;
       }
       .contact-info {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
         gap: 20px;
-        margin-bottom: 25px;
-      }
-      .contact-item {
-        display: flex;
-        align-items: center;
-      }
-      .contact-label {
-        font-weight: bold;
-        margin-right: 5px;
-      }
-      .summary {
-        text-align: justify;
-        margin-bottom: 25px;
-        padding: 0 20px;
-      }
-      section {
-        margin-bottom: 25px;
+        margin: 20px 0;
       }
       .section-title {
-        font-size: 18px;
-        text-transform: uppercase;
         border-bottom: 2px solid #555;
         padding-bottom: 5px;
-        margin-bottom: 15px;
-      }
-      .experience-item,
-      .education-item {
-        margin-bottom: 15px;
+        margin-top: 20px;
       }
       .job-title,
       .institution {
         font-weight: bold;
-        font-size: 16px;
       }
       .company,
       .degree {
         font-style: italic;
-        margin-bottom: 5px;
       }
       .period {
         color: #777;
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-      ul {
-        padding-left: 20px;
-      }
-      .skills {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
       }
       .skill-category {
         display: flex;
-        align-items: baseline;
+        margin-bottom: 10px;
       }
       .skill-label {
         font-weight: bold;
-        min-width: 200px;
+        width: 200px;
       }
-      @media (max-width: 600px) {
-        .contact-info {
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-        }
-        .skill-category {
-          flex-direction: column;
-        }
-        .skill-label {
-          margin-bottom: 5px;
-        }
+
+      /* Email Popup Styles */
+      #email-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      }
+      .popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 400px;
+        width: 100%;
+      }
+      input,
+      textarea {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #close-popup {
+        float: right;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -122,123 +98,101 @@
     </header>
 
     <div class="contact-info">
-      <div class="contact-item">
-        <span class="contact-label">Email:</span>
-        <span>ngocnhatforwork@gmail.com</span>
+      <span
+        ><strong>Email:</strong>
+        <a href="#" id="email-link">ngocnhatforwork@gmail.com</a></span
+      >
+      <span><strong>Mobile:</strong> 0962288718</span>
+      <span><strong>Github:</strong> nhaatj2804</span>
+    </div>
+
+    <p>
+      Enthusiastic and motivated undergraduate Software Engineering student with
+      a strong interest in Artificial Intelligence. Seeking an internship
+      opportunity to apply and expand my knowledge in AI development, while
+      contributing to innovative projects in a dynamic environment.
+    </p>
+
+    <h3 class="section-title">Work Experience</h3>
+    <div>
+      <div class="job-title">Backend Engineer Intern</div>
+      <div class="company">NOBISOFT</div>
+      <div class="period">(2024 - Present)</div>
+      <ul>
+        <li>
+          Collaborated with the engineering team and other departments to
+          support project execution and achieve milestones.
+        </li>
+        <li>
+          Coordinated with cross-functional teams to ensure smooth integration
+          and successful project completion.
+        </li>
+      </ul>
+    </div>
+
+    <h3 class="section-title">Education</h3>
+    <div>
+      <div class="institution">
+        POSTS AND TELECOMMUNICATIONS INSTITUTE OF TECHNOLOGY
       </div>
-      <div class="contact-item">
-        <span class="contact-label">Mobile:</span>
-        <span>0962288718</span>
+      <div class="degree">
+        Bachelor of Engineering in Information Technology
       </div>
-      <div class="contact-item">
-        <span class="contact-label">Github:</span>
-        <span>nhaatj2804</span>
+      <div class="period">(2022 - Present)</div>
+      <p>GPA: 3.62/4.00</p>
+    </div>
+
+    <h3 class="section-title">Skills</h3>
+    <div class="skill-category">
+      <div class="skill-label">Programming Languages:</div>
+      <div>JAVA, NODEJS, PYTHON, C++, C</div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-label">Frameworks and Libraries:</div>
+      <div>SPRINGBOOT, NESTJS</div>
+    </div>
+    <div class="skill-category">
+      <div class="skill-label">Databases:</div>
+      <div>SQL SERVER, POSTGRESQL, MYSQL, MONGODB</div>
+    </div>
+
+    <!-- Email Popup -->
+    <div id="email-popup">
+      <div class="popup-content">
+        <span id="close-popup">&times;</span>
+        <h3>Send Email</h3>
+        <form id="email-form">
+          <input type="email" id="email" placeholder="Your Email" required />
+          <input type="text" id="subject" placeholder="Subject" required />
+          <textarea id="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <div id="status"></div>
       </div>
     </div>
 
-    <div class="summary">
-      <p>
-        Enthusiastic and motivated undergraduate Software Engineering student
-        with a strong interest in Artificial Intelligence. Seeking an internship
-        opportunity to apply and expand my knowledge in AI development, while
-        contributing to innovative projects in a dynamic environment.
-      </p>
-    </div>
+    <script>
+      document
+        .getElementById("email-link")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.getElementById("email-popup").style.display = "flex";
+        });
 
-    <section class="work-experience">
-      <h3 class="section-title">Work Experience</h3>
+      document
+        .getElementById("close-popup")
+        .addEventListener("click", function () {
+          document.getElementById("email-popup").style.display = "none";
+        });
 
-      <div class="experience-item">
-        <div class="job-title">Backend Engineer Intern</div>
-        <div class="company">NOBISOFT</div>
-        <div class="period">(2024 - Present)</div>
-        <ul>
-          <li>
-            Collaborated with the engineering team and other departments to
-            support project execution and achieve milestones.
-          </li>
-          <li>
-            Coordinated with cross-functional teams to ensure smooth integration
-            and successful project completion.
-          </li>
-        </ul>
-      </div>
-
-      <div class="experience-item">
-        <div class="job-title">Scrum Master</div>
-        <div class="company">DATA ENGINEER COACHING 1 ON 1 - UNIGAP</div>
-        <div class="period">(2023 - 2024)</div>
-        <ul>
-          <li>
-            Supported teams in removing roadblocks and achieving project goals.
-          </li>
-          <li>
-            Facilitated Scrum ceremonies and ensured adherence to Agile
-            principles within the team.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="education">
-      <h3 class="section-title">Education</h3>
-
-      <div class="education-item">
-        <div class="institution">
-          POSTS AND TELECOMMUNICATIONS INSTITUTE OF TECHNOLOGY
-        </div>
-        <div class="degree">
-          Bachelor of Engineering in Information Technology
-        </div>
-        <div class="period">(2022 - Present)</div>
-        <p>GPA: 3.62/4.00</p>
-      </div>
-
-      <div class="education-item">
-        <div class="institution">
-          HNUE HIGHSCHOOL FOR GIFTED STUDENT UNIVERSITY
-        </div>
-        <div class="period">(2019 - 2022)</div>
-      </div>
-    </section>
-
-    <section class="certificates">
-      <h3 class="section-title">Certificate</h3>
-      <p>IELTS(expired): 7.5</p>
-    </section>
-
-    <section class="skills">
-      <h3 class="section-title">Skills</h3>
-
-      <div class="skill-category">
-        <div class="skill-label">Programming Languages:</div>
-        <div class="skill-value">JAVA, NODEJS, PYTHON, C++, C</div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-label">Frameworks and Libraries:</div>
-        <div class="skill-value">SPRINGBOOT, NESTJS</div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-label">Databases:</div>
-        <div class="skill-value">SQL SERVER, POSTGRESQL, MYSQL, MONGODB</div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-label">API Development:</div>
-        <div class="skill-value">RESTful APIs</div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-label">Version Control:</div>
-        <div class="skill-value">GIT, GITHUB, BITBUCKET</div>
-      </div>
-
-      <div class="skill-category">
-        <div class="skill-label">Other:</div>
-        <div class="skill-value">DESIGN PATTERN</div>
-      </div>
-    </section>
+      document
+        .getElementById("email-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          var status = document.getElementById("status");
+          status.textContent = "Email sent successfully!";
+          document.getElementById("email-form").reset();
+        });
+    </script>
   </body>
 </html>
